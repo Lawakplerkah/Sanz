@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Cari Produk..." oninput="filterProducts()">
+    </div>
+
+    <div id="produk-sewa" class="produk-container">
+        <h2>Produk Sewa</h2>
+    </div>
+
+    <div id="produk-premium" class="produk-container">
+        <h2>Produk Premium</h2>
+    </div>
+
+    <div class="pagination">
+        <button id="prev-page">Prev</button>
+        <span id="page-number">Page 1 of 2</span>
+        <button id="next-page">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
