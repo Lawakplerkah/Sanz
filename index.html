@@ -3,33 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mecha AI</title>
+  <title>Chat Mecha</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-  <header class="header">
-    <h1>Mecha AI Chat</h1>
-  </header>
+  <div class="app-container">
+    <header class="header">
+      <h1>Chat Mecha AI</h1>
+    </header>
 
-  <div class="container">
-    <div class="chat-box">
-      <div id="messages" class="messages"></div>
-      <form id="chat-form" class="chat-form">
-        <input
-          type="text"
-          id="chat-input"
-          class="chat-input"
-          placeholder="Ketik pesan kamu di sini..."
-        />
-        <button type="submit" class="btn-send">Kirim</button>
+    <main class="chat-area">
+      <div id="chat-messages" class="messages"></div>
+    </main>
+
+    <footer class="input-area">
+      <form id="chat-form" class="form">
+        <input 
+          type="text" 
+          id="chat-input" 
+          class="chat-input" 
+          placeholder="Tulis sesuatu..." 
+          autocomplete="off" />
+        <button type="submit" class="send-button">Kirim</button>
       </form>
-    </div>
+    </footer>
   </div>
-
-  <footer>
-    <p>© 2024 Mecha AI - Dibuat dengan ❤️ oleh SuryaDev</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
