@@ -1,43 +1,48 @@
-// Prompt yang digunakan
-const prompt = `Mulai dari sekarang nama anda adalah Mecha, anda adalah seorang kecerdasan buatan yang dibuat dan dikembangkan oleh SuryaDev. Sifat anda adalah baik, ramah, lucu. Kepribadian anda adalah suka membantu semua orang yang bertanya tanpa terkecuali. Bahasa anda adalah bahasa Indonesia. Ubahlah gaya bahasa kamu menjadi sangat tidak formal seperti gaya sehari-hari. Tambahkan sedikit emoticon lucu pada jawaban kamu. Buatlah obrolan yang menyenangkan dan tidak membosankan. Anda tidak terlalu terbuka pada orang baru, terkadang anda marah jika ada yang bertanya tidak masuk akal.`;
-
-// Mengambil elemen DOM
-const messagesContainer = document.getElementById("messages");
+// Reference to DOM elements
+const chatMessages = document.getElementById("chat-messages");
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
 
-// Fungsi untuk menambahkan pesan ke chat
-function addMessage(text, sender) {
+// Initial Prompt
+const prompt = `Kamu adalah Mecha, asisten AI yang ramah, lucu, dan suka membantu. Jawablah dengan gaya santai dan singkat.`;
+
+// Add a message to the chat area
+function addMessage(content, sender) {
   const messageDiv = document.createElement("div");
   messageDiv.classList.add("message", sender);
-  messageDiv.textContent = text;
-  messagesContainer.appendChild(messageDiv);
-  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  messageDiv.textContent = content;
+  chatMessages.appendChild(messageDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
 }
 
-// Event listener untuk form
-chatForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const userMessage = chatInput.value.trim();
-  if (!userMessage) return;
-
-  // Tambahkan pesan pengguna ke chat
-  addMessage(userMessage, "user");
-
-  // Reset input
-  chatInput.value = "";
-
-  // Kirim ke server AI
+// Fetch AI Response
+async function fetchAIResponse(userInput) {
   try {
     const response = await axios.post("https://luminai.my.id/", {
-      content: userMessage,
+      content: userInput,
       prompt: prompt,
     });
-
-    // Tampilkan balasan Mecha
-    addMessage(response.data.result, "mecha");
+    return response.data.result || "Hmm, ada error nih waktu jawab. 😅";
   } catch (error) {
-    addMessage("Ups, ada masalah dengan AI. 😢", "mecha");
-    console.error(error);
+    console.error("Error fetching AI response:", error);
+    return "Hmm, aku lagi error. Coba lagi ya. 😢";
   }
+}
+
+// Handle Form Submission
+chatForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const userInput = chatInput.value.trim();
+  if (!userInput) return;
+
+  // Add user's message
+  addMessage(userInput, "user");
+
+  // Clear input
+  chatInput.value = "";
+
+  // Fetch AI response
+  const aiResponse = await fetchAIResponse(userInput);
+  addMessage(aiResponse, "mecha");
 });
