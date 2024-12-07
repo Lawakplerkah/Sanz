@@ -1,33 +1,79 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat Mecha</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Sanz - My Bio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-container">
-    <header class="header">
-      <h1>Chat Mecha AI</h1>
-    </header>
+  <header>
+    <h1>Sanz</h1>
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="chat-area">
-      <div id="chat-messages" class="messages"></div>
-    </main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello, I'm Sanz! Welcome to my personal website where I share my projects, experiences, and thoughts.</p>
+  </section>
 
-    <footer class="input-area">
-      <form id="chat-form" class="form">
-        <input 
-          type="text" 
-          id="chat-input" 
-          class="chat-input" 
-          placeholder="Tulis sesuatu..." 
-          autocomplete="off" />
-        <button type="submit" class="send-button">Kirim</button>
-      </form>
-    </footer>
-  </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-item">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Project One</h3>
+        <p>Description of project one.</p>
+        <a href="#">View Details</a>
+      </div>
+      <div class="project-item">
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>Description of project two.</p>
+        <a href="#">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-item">
+        <p>"Sanz is an amazing developer!"</p>
+        <h4>- John Doe</h4>
+      </div>
+      <div class="testimonial-item">
+        <p>"Highly recommend working with Sanz."</p>
+        <h4>- Jane Smith</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <div class="blog-list">
+      <div class="blog-item">
+        <h3><a href="#">Understanding JavaScript Closures</a></h3>
+        <p>A quick guide to understanding closures in JavaScript.</p>
+      </div>
+      <div class="blog-item">
+        <h3><a href="#">CSS Grid vs Flexbox</a></h3>
+        <p>When to use CSS Grid and when to use Flexbox for layout.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Sanz. All Rights Reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
