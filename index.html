@@ -3,78 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanz - My Bio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>My Bio</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Tautkan CSS -->
 </head>
 <body>
   <header>
-    <h1>Sanz</h1>
-    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#blog">Blog</a></li>
-      </ul>
-    </nav>
+    <h1>My Bio</h1>
+    <button class="dark-mode-toggle">Toggle Dark Mode</button>
+    <div class="menu-icon">&#9776;</div> <!-- Simbol hamburger -->
   </header>
 
-  <section id="about">
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section>
     <h2>About Me</h2>
-    <p>Hello, I'm Sanz! Welcome to my personal website where I share my projects, experiences, and thoughts.</p>
+    <p>This is a brief introduction about me.</p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-item">
-        <img src="project1.jpg" alt="Project 1">
-        <h3>Project One</h3>
-        <p>Description of project one.</p>
-        <a href="#">View Details</a>
-      </div>
-      <div class="project-item">
-        <img src="project2.jpg" alt="Project 2">
-        <h3>Project Two</h3>
-        <p>Description of project two.</p>
-        <a href="#">View Details</a>
-      </div>
+  <section class="project-list">
+    <div class="project-item">
+      <img src="your-project-image.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <p>Description of project 1.</p>
+      <a href="#">View Project</a>
     </div>
-  </section>
-
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonial-list">
-      <div class="testimonial-item">
-        <p>"Sanz is an amazing developer!"</p>
-        <h4>- John Doe</h4>
-      </div>
-      <div class="testimonial-item">
-        <p>"Highly recommend working with Sanz."</p>
-        <h4>- Jane Smith</h4>
-      </div>
-    </div>
-  </section>
-
-  <section id="blog">
-    <h2>Blog</h2>
-    <div class="blog-list">
-      <div class="blog-item">
-        <h3><a href="#">Understanding JavaScript Closures</a></h3>
-        <p>A quick guide to understanding closures in JavaScript.</p>
-      </div>
-      <div class="blog-item">
-        <h3><a href="#">CSS Grid vs Flexbox</a></h3>
-        <p>When to use CSS Grid and when to use Flexbox for layout.</p>
-      </div>
-    </div>
+    <!-- Tambahkan lebih banyak proyek di sini -->
   </section>
 
   <footer>
-    <p>&copy; 2024 Sanz. All Rights Reserved.</p>
+    <p>&copy; 2024 My Bio</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script> <!-- Tautkan JavaScript -->
 </body>
 </html>
